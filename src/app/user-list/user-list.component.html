@@ -1,0 +1,20 @@
+<ion-item *ngIf="user">
+  <div *ngIf="!status$ | async as sts" slot="start" class="dot dot-offline">
+  </div>
+  <div *ngIf="status$ | async as sts" slot="start" class="dot" 
+  [class]="{
+    'dot-offline':sts.status==='offline'||sts.status==undefined,
+    'dot-online':sts.status==='online',
+    'dot-idle':sts.status==='away'
+  }">
+  </div>
+  <ion-label class="ion-text-wrap">
+    <h2>
+      {{ user.userName }}
+      <span class="date">
+        <ion-note>{{ user.updatedAt | date:'dd/MM/yyyy' }}</ion-note>
+      </span>
+    </h2>
+    <h3>{{ user.userMail }}</h3>
+  </ion-label>
+</ion-item>

@@ -1,0 +1,66 @@
+[
+  {
+    "createdAt": "1641201154000",
+    "userName": "Matt Chorsey",
+    "userMail": "test@test.com",
+    "userID": "",
+    "isOnline": "offline",
+    "updatedAt": "1641201154000"
+  },
+  {
+    "createdAt": "1641201154000",
+    "userName": "Lauren Ruthford",
+    "userMail": "test@test.com",
+    "userID": "",
+    "isOnline": "offline",
+    "updatedAt": "1641201154000"
+  },
+  {
+    "createdAt": "1641201154000",
+    "userName": "Jordan Firth",
+    "userMail": "test@test.com",
+    "userID": "",
+    "isOnline": "offline",
+    "updatedAt": "1641201154000"
+  },
+  {
+    "createdAt": "1641201154000",
+    "userName": "Bill Thomas",
+    "userMail": "test@test.com",
+    "userID": "",
+    "isOnline": "offline",
+    "updatedAt": "1641201154000"
+  },
+  {
+    "createdAt": "1641201154000",
+    "userName": "Joanne Pollan",
+    "userMail": "test@test.com",
+    "userID": "",
+    "isOnline": "offline",
+    "updatedAt": "1641201154000"
+  },
+  {
+    "createdAt": "1641201154000",
+    "userName": "Andrea Cornerston",
+    "userMail": "test@test.com",
+    "userID": "",
+    "isOnline": "offline",
+    "updatedAt": "1641201154000"
+  },
+  {
+    "createdAt": "1641201154000",
+    "userName": "Moe Chamont",
+    "userMail": "test@test.com",
+    "userID": "",
+    "isOnline": "offline",
+    "updatedAt": "1641201154000"
+  },
+  {
+    "createdAt": "1641201154000",
+    "userName": "Kelly Richardson",
+    "userMail": "test@test.com",
+    "userID": "",
+    "isOnline": "offline",
+    "updatedAt": "1641201154000"
+  }
+]

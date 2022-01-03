@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode="ios" color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  <div class="ion-padding">
+    <ion-list>
+      <form #regForm="ngForm"> <!-- (ngSubmit)="editProfile(model)" -->
+        <ion-item>
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input type="text" name="name" [(ngModel)]="model.name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Telefone</ion-label>
+          <ion-input type="tel" name="tel" [(ngModel)]="model.tel"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Matrícula</ion-label>
+          <ion-input readonly type="tel" name="mat" [(ngModel)]="model.mat"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">E-mail</ion-label>
+          <ion-input type="email" name="email" [(ngModel)]="model.email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input type="password" name="psw" [(ngModel)]="model.psw"></ion-input>
+        </ion-item>
+        <br>
+          <ion-button expand="block" fill="outline" color="primary" (click)="editProfile(model)">Atualizar</ion-button>
+      </form>
+    </ion-list>
+
+  </div>
+
+  <ion-list-header class="favColor ion-text-center">
+    <span *ngIf="isProf==='true'">Disciplinas que você leciona:</span>
+    <span *ngIf="isProf==='false'">Disciplinas matriculado:</span>
+  </ion-list-header>
+  <ion-list *ngIf="disciplinas.length>0" class="ion-text-center">
+    <ion-item *ngFor="let disc of myDisciplinas">
+      <ion-avatar>
+        <ion-icon name="school" color="light" class="iconColor"></ion-icon>
+      </ion-avatar>
+      &nbsp;
+      &nbsp;
+      <ion-col class="imgBlock ion-padding-left">
+        <ion-label><strong> {{ disc.title }} </strong></ion-label>
+        <ion-label> {{ disc?.code }} </ion-label>
+        <ion-text> {{ disc?.profName }} </ion-text>
+      </ion-col>
+      &nbsp;
+      <ion-icon *ngIf="isProf==='true'" slot="icon-only" slot="end" name="trash-outline" color="primary" (click)="deleteDisciplina(disc.id)"></ion-icon>
+      <!-- <ion-icon *ngIf="isProf==='false'" slot="icon-only" slot="end" name="add-circle-outline" color="primary" (click)="addDisciplina(disc)"></ion-icon> -->
+    </ion-item>
+  </ion-list>
+  <div *ngIf="disciplinas.length<=0" class="ion-text-center">
+    <h1 class="alertSemFav">Você não possui disciplinas.</h1>
+  </div>
+
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode="ios" color="primary">
+    <ion-title>
+      Users List
+    </ion-title>
+    <ion-buttons>      
+    </ion-buttons>
+    <ion-button slot="end" fill="clear" (click)="logout()">
+      <img slot="icon-only" src="../../assets/imgs/close.png" class="closeIcon" alt="imagem logotipo" />
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <app-user-list *ngFor="let user of users" [user]="user" [uid]="user.userID"></app-user-list>
+  </ion-list>
+
+</ion-content>

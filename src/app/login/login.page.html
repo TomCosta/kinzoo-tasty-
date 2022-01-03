@@ -1,0 +1,114 @@
+<ion-content class="globalBG">
+
+<!-- Login Mode -->
+<div *ngIf="mode==='loginMode'" class="container">
+  <ion-grid class="quadro">
+    <ion-row>
+      <ion-col>
+        <div class="divLogo">
+          <ion-icon src="assets/imgs/kinzoo.svg" color="light" class="logo-login"></ion-icon>
+        </div>
+        <ion-row class="ion-text-center ion-padding">
+          <ion-col class="ion-text-center">
+            <ion-list class="list-login">
+              <form [formGroup]="loginForm" (ngSubmit)="login($event)">
+                <ion-col class="ion-text-center">
+                  <div class="itemMargin">
+                    <ion-item lines="none" [ngClass]="{ 'has-error': isSubmitted && formControls.userMail.errors }">
+                      <img src="assets/imgs/user.png" class="logIcon" alt="imagem logotipo" />
+                      <input type="text" formControlName="userMail" placeholder="Enter your email">
+                    </ion-item>
+                    <div *ngIf="isSubmitted && formControls.userMail.errors" class="alert-block">
+                      <div *ngIf="formControls.userMail.errors.required">Enter your Email</div>
+                    </div>
+                  </div>
+                  <div class="itemMargin">
+                    <ion-item lines="none" [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+                      <img src="assets/imgs/key.png" class="logIcon" alt="imagem logotipo" />
+                      <input type="password" formControlName="password" placeholder="Enter your password">
+                    </ion-item>
+                    <div *ngIf="isSubmitted && formControls.password.errors" class="alert-block">
+                      <div *ngIf="formControls.password.errors.required">Enter your password</div>
+                    </div>
+                  </div>
+                  <div class="itemMargin">
+                    <br>
+                  </div>
+                  <ion-button type="submit" color="warning">
+                    <label class="buttonTxt">Login</label>
+                  </ion-button>
+                  <br>
+                  <p>
+                    <a (click)="mode='registerMode'"><i>Create an account</i></a>
+                  </p>              
+                </ion-col>
+              </form>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+<!-- Register Mode -->
+<div *ngIf="mode==='registerMode'" class="container">
+  <ion-grid class="quadro">
+    <ion-row>
+      <ion-col>
+        <div class="divLogo">
+          <ion-icon src="assets/imgs/kinzoo.svg" color="light" class="logo-login"></ion-icon>
+        </div>
+        <ion-row class="ion-text-center ion-padding">
+          <ion-col class="ion-text-center">
+            <ion-list class="list-register">
+              <form [formGroup]="registerForm" (ngSubmit)="register($event)">
+                <ion-col class="ion-text-center">
+                  <div class="itemMargin">
+                    <ion-item lines="none" [ngClass]="{ 'has-error': isSubmitted && formControls.userName.errors }">
+                      <img src="assets/imgs/user.png" class="logIcon" alt="imagem logotipo" />
+                      <input type="text" formControlName="userName" placeholder="Inform your name">
+                    </ion-item>
+                    <div *ngIf="isSubmitted && formControls.userName.errors" class="alert-block">
+                      <div *ngIf="formControls.userName.errors.required">Enter your Name</div>
+                    </div>
+                  </div>
+                  <div class="itemMargin">
+                    <ion-item lines="none" [ngClass]="{ 'has-error': isSubmitted && formControls.userMail.errors }">
+                      <img src="assets/imgs/user.png" class="logIcon" alt="imagem logotipo" />
+                      <input type="text" formControlName="userMail" placeholder="Register an email">
+                    </ion-item>
+                    <div *ngIf="isSubmitted && formControls.userMail.errors" class="alert-block">
+                      <div *ngIf="formControls.userMail.errors.required">Enter your Email</div>
+                    </div>
+                  </div>
+                  <div class="itemMargin">
+                    <ion-item lines="none" [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+                      <img src="assets/imgs/key.png" class="logIcon" alt="imagem logotipo" />
+                      <input type="password" formControlName="password" placeholder="Register a password">
+                    </ion-item>
+                    <div *ngIf="isSubmitted && formControls.password.errors" class="alert-block">
+                      <div *ngIf="formControls.password.errors.required">Enter your password</div>
+                    </div>
+                  </div>
+                  <div class="itemMargin">
+                    <br>
+                  </div>
+                  <ion-button type="submit" color="warning">
+                    <label class="buttonTxt">Register</label>
+                  </ion-button>
+                  <br>
+                  <p>
+                    <a (click)="mode='loginMode'"><i>Enter with my account</i></a>
+                  </p>              
+                </ion-col>
+              </form>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+</ion-content>
